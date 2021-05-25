@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\S4GIT\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\S4GIT\\.nuget\\packages"
+    ]
+  }
+}
