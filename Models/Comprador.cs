@@ -6,5 +6,12 @@ namespace Practica3.Models
         public string Nombre { get; set; }
         public string Celular { get; set; }
         public string Lugar { get; set; }
+
+        public string Foto { get; set; }
+        public string Precio { get; set; }
+
+
+        public Categoria Categoria { get; set; }
+        public int CategoriaId { get; set; }
     }
 }

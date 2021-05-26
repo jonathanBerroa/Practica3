@@ -1,0 +1,48 @@
+@model List<Comprador>
+
+
+<h1>Lista de Pedidos</h1>
+
+<table class="table border">
+    <tr>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Celular</th>
+        <th>Lugar</th>
+        <th>Foto</th>
+        <th>Precio</th>
+        <th>Categoria</th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Nombre</td>
+            <td>@item.Celular</td>
+            <td>@item.Lugar</td>
+            <td>
+                <div><img src="@item.Foto" width="100px" height="100px" />
+            </td>
+            <td>@item.Precio</td>
+            <td>@item.CategoriaId</td>
+            <td>
+                <a href="/Productos/EditarProductos/@item.Id" method="post" class="btn btn-secondary">Editar</a>
+
+                <form action="/Productos/BorrarProductos" method="post" class="d-inline-block">
+                    <input type="hidden" name="ID" value="@item.Id" />
+                    <button class="btn btn-danger">Borrar</button>
+                </form>
+            </td>
+
+        </tr>
+    }
+    @if (Model.Count == 0)
+    {
+        <tr>
+            <td colspan="4" class="text-center">No se encontraron Pedidos</td>
+        </tr>
+    }
+</table>
+
+<a href="/Productos/CrearSolicitud" class="btn btn-primary">Añadir Solicitud</a>
