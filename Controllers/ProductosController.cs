@@ -60,8 +60,13 @@ namespace Practica3.Controllers
         {
             if (ModelState.IsValid)
             {
-                var region = _context.Compradores.Find(r.Id);
-                region.Nombre = r.Nombre;
+                var comprar = _context.Compradores.Find(r.Id);
+                comprar.Nombre = r.Nombre;
+                comprar.Celular = r.Celular;
+                comprar.Lugar = r.Lugar;
+                comprar.Foto = r.Foto;
+                comprar.Precio = r.Precio;
+
                 _context.SaveChanges();
                 return RedirectToAction("Comprador");
             }
